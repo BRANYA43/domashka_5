@@ -29,7 +29,7 @@ def get_input_number(message: str) -> int:
 
 def is_date(day: int, month: int, year: int) -> bool:
     now_date = date.today()
-    if day == now_date.day and month == now_date.month:
+    if day == now_date.day and month == now_date.month and year.isdigit():
         return True
     else:
         return False
