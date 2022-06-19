@@ -11,7 +11,7 @@ def get_format_number(number: int | float) -> int | float:
         return number
 
 
-def isfloat(value) -> bool:
+def is_float(value) -> bool:
     try:
         if float(value):
             return True
@@ -25,7 +25,7 @@ def get_input_number(message: str) -> int | float:
         ret = input(message)
         if ret.isdigit():
             return int(ret)
-        elif isfloat(ret):
+        elif is_float(ret):
             return float(ret)
 
 
