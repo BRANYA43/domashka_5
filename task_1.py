@@ -7,20 +7,24 @@ from random import randint
 
 
 def is_prime(number: int) -> bool:
+    if number < 2:
+        return False
     div = 2
     while number > div:
         if number % div != 0:
             div += 1
         else:
             return False
+    return True
+
+
+def main():
+    some_number = randint(0, 1000)
+    if is_prime(some_number):
+        print(f'Число {some_number} є простим.')
     else:
-        print(number)
-        return True
+        print(f'Число {some_number} не є простим.')
 
 
-count = 0
-for i in range(2, 1000):
-    if is_prime(i):
-        count += 1
-
-print(count)
+if __name__ == '__main__':
+    main()
