@@ -5,7 +5,7 @@
 
 
 def get_format_number(number: int | float) -> int | float:
-    if number == float:
+    if type(number) is float:
         return number * 10 // 1 / 10
     else:
         return number
