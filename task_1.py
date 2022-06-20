@@ -9,8 +9,8 @@ from random import randint
 def is_prime(number: int) -> bool:
     if number % 2 == 0 and number < 1:
         return False
-    for num in range(3, number):
-        if number % num == 0:
+    for div in range(3, number, 2):
+        if number % div == 0:
             return False
     return True
 
