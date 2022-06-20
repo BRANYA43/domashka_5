@@ -7,14 +7,12 @@ from random import randint
 
 
 def is_prime(number: int) -> bool:
-    if number > 1:
-        div = 2
-        while number > div:
-            if number % div != 0:
-                div += 1
-            else:
-                return False
-        return True
+    if number % 2 == 0 and number < 1:
+        return False
+    for num in range(3, number):
+        if number % num == 0:
+            return False
+    return True
 
 
 def main():
