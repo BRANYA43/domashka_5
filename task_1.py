@@ -3,7 +3,11 @@
 і повертає `True`, якщо воно просте, і `False` - інакше.
 (Прості числа - ті які діляться без залишку тільки на себе або 1, наприклад 2, 3, 5, 7, 11 ...)
 """
-from random import randint
+def get_input_number(message: str) -> int:
+    ret = ''
+    while not ret.isdigit():
+        ret = input(message)
+    return int(ret)
 
 
 def is_prime(number: int) -> bool:
@@ -16,7 +20,9 @@ def is_prime(number: int) -> bool:
 
 
 def main():
-    some_number = randint(0, 1000)
+    some_number = -1
+    while 0 <= some_number < 1000:
+        some_number = get_input_number('Введіть число: ')
     if is_prime(some_number):
         print(f'Число {some_number} є простим.')
     else:
