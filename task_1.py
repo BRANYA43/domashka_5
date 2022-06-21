@@ -23,7 +23,7 @@ def is_prime(number: int) -> bool:
 
 def main():
     some_number = -1
-    while 0 <= some_number < 1000:
+    while 0 > some_number or some_number > 1000:
         some_number = get_input_number('Введіть число: ')
     if is_prime(some_number):
         print(f'Число {some_number} є простим.')
