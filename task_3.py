@@ -88,7 +88,7 @@ def main():
     choose_figure = -1
     while choose_figure > 7 or choose_figure < 0:
         choose_figure = get_input_number('Оберіть фігур (від 0-7): ')
-
+    print(figures[choose_figure])
     print(get_area_figures(choose_figure))
 
 
