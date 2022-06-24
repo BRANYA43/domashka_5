@@ -22,54 +22,46 @@ def get_area_figures(figure: int) -> int | float:
     elif figure == 2:
         ret = get_formulas_area_figures(
             get_input_number('a = '),
-            get_input_number('b = ')
+            get_input_number('b = '), figure=1
         )
     elif figure == 3:
         ret = get_formulas_area_figures(
             get_input_number('a = '),
-            get_input_number('h = ')
+            get_input_number('h = '), figure=1
         )
     elif figure == 4:
         ret = get_formulas_area_figures(
-            get_input_number('a = ')
+            get_input_number('a = '), figure=2
         )
     elif figure == 5:
         ret = get_formulas_area_figures(
             get_input_number('a = '),
             get_input_number('b = '),
-            get_input_number('h = ')
+            get_input_number('h = '), figure=3
         )
     elif figure == 6:
         ret = get_formulas_area_figures(
-            get_input_number('r = ')
+            get_input_number('r = '), figure=4
         )
     elif figure == 7:
         ret = get_formulas_area_figures(
             get_input_number('n = '),
             get_input_number('a = '),
-            get_input_number('r = ')
+            get_input_number('r = '), figure=5
         )
     return ret
 
 
 def get_formulas_area_figures(n1: int, n2=0, n3=0, figure=0) -> int | float:
-    if figure == 0:
-        return n1 * n2 / 2
-
-    elif figure == 1:
-        return n1 * n2
-
-    elif figure == 2:
-        return n1 ** 2
-
-    elif figure == 3:
-        return (n1 + n2) * n3 / 2
-
-    elif figure == 4:
-        return n1 ** 2 * 3.14
-
-    elif figure == 5:
-        return n1 * n2 * n3 / 2
+    formulas = {
+        0: n1 * n2 / 2,
+        1: n1 * n2,
+        2: n1 ** 2,
+        3: (n1 + n2) * n3 / 2,
+        4: n1 ** 2 * 3.14,
+        5: n1 * n2 * n3 / 2
+    }
+    return formulas[figure]
 
 
 def main():
